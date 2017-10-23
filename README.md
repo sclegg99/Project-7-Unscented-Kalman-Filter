@@ -17,3 +17,18 @@ The Normalized Innovation Squared (NIS) for the optimal &#963;-a and &#963;-yawd
 ![NIS for Optimal Process Variation](Figures/NIS.png)
 
 ![NIS for Optimal Process Variation](Figures/NIS1.png)
+
+The effect of using only laser or radar measurements to track the state was then evaluated.  The table below illustrates the effect of using all the measurements compared to only using the laser or radar measurements.
+
+|State Variable | All data  | Laser Only | Radar Only  |
+| ------------- |:-----:| -----:| -----:|
+| P_x           | 0.078 | 0.174 | 0.232 |
+| P_y           | 0.087 | 0.153 | 0.334 |
+| V_x           | 0.238 | 0.395 | 0.358 |
+| V_y           | 0.235 | 0.340 | 0.438 |
+
+These results clearly show that the error is much less when using both the laser and radar data.  It also indicates that the predictions using only the laser data is slightly better than only using the radar data.  This is likely due to the fact that the laser measurement are more accurate than the radar measurements.
+
+One final evaluation was performed.  This evaluation compared the predicted velocity to the measured velocity when both the laser and radar measurements were used for the state predictions.  This figure indicates that the predicted velocity tracks the radar measurement velocity.
+
+![Velocity Accuracy](Figures/Velocity.png) 
