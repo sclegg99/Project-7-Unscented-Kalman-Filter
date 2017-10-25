@@ -46,3 +46,17 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
     //return the result
     return rmse;
 }
+
+void Tools::angleNormalization(double *psi) {
+    /* Method to check if the predicted angle is within -PI to PI.
+     * If it outside this range them move the angle to be within this range.
+     */
+    if(*psi> M_PI) {
+        *psi -= 2.*M_PI;
+    }
+    else if(*psi < -M_PI) {
+        *psi += 2.*M_PI;
+    }
+    return;
+}
+

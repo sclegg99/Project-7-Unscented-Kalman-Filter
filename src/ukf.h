@@ -2,6 +2,7 @@
 #define UKF_H
 
 #include "measurement_package.h"
+#include "tools.h"
 #include "Eigen/Dense"
 #include <vector>
 #include <string>
@@ -27,6 +28,12 @@ public:
     
     ///* state covariance matrix
     MatrixXd P_;
+    
+    ///* Measurement noise covariance matrix
+    MatrixXd R_laser_;
+    MatrixXd R_radar_;
+    int n_z_laser_;
+    int n_z_radar_;
     
     ///* predicted sigma points matrix
     MatrixXd Xsig_pred_;
@@ -60,12 +67,17 @@ public:
     
     ///* State dimension
     int n_x_;
+    int n_x_1_;
     
     ///* Augmented state dimension
     int n_aug_;
+    int n_sig_;
     
     ///* Sigma point spreading parameter
     double lambda_;
+    
+    ///* Initialize Tools utility
+    Tools tools;
     
     ///* Ouput file pointer
     std::ofstream myfile;
